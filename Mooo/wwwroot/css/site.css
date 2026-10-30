@@ -1,0 +1,203 @@
+/*Background*/
+body {
+    background-color: #F0F8FF;
+    color: #00aff0;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+/*list data the top*/
+.top-header {
+    border-bottom: 1px solid #CBE4F9;
+}
+
+.logo-circle, .arrow-circle {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo-circle {
+    background-color: #E1F3FE;
+    border: 1px solid #5C768D;
+}
+
+.arrow-circle {
+    border: 1px solid #00AFF0;
+    color: #6b533b;
+}
+
+.brand-title, .back-title, .main-title, .card-heading, .card-number {
+    font-family: 'Fraunces', Georgia, serif;
+}
+
+.brand-title {
+    font-size: 1.2rem;
+    color: #000000;
+    line-height: 1.1;
+}
+
+.brand-sub, .back-sub {
+    font-size: 0.6rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    color: #00aff0;
+}
+
+.back-title {
+    font-size: 0.85rem;
+    color: #00aff0;
+    line-height: 1.1;
+}
+
+
+.eyebrow {
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    color: #000000;
+}
+
+.main-title {
+    font-size: 2.8rem;
+}
+
+.subtitle {
+    max-width: 580px;
+    font-size: 0.9rem;
+    color: #000000;
+}
+
+/*General login card*/
+.login-wrapper {
+    max-width: 900px;
+}
+
+.login-card {
+    position: relative;
+    border-radius: 16px;
+    padding: 32px;
+}
+
+.card-number {
+    position: absolute;
+    top: 24px;
+    right: 28px;
+    font-size: 3.5rem;
+    opacity: 0.15;
+}
+
+.badge-pill {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 99px;
+    font-size: 0.62rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    margin-bottom: 16px;
+}
+
+.card-heading {
+    font-size: 1.7rem;
+    margin-bottom: 8px;
+}
+
+.card-text-muted {
+    font-size: 0.82rem;
+    opacity: 0.75;
+    margin-bottom: 24px;
+}
+
+.form-label {
+    font-size: 0.75rem;
+    font-weight: 700;
+}
+
+/*Left crad darker colours*/
+.card-dark {
+    background: linear-gradient(160deg, #13315c, #0b2545);
+    color: #ffffff;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+}
+
+.badge-dark-pill {
+    background-color: rgba(206, 150, 74, 0.18);
+    border: 1px solid rgba(214, 162, 90, 0.35);
+    color: #e3b56e;
+}
+
+.card-dark .input-group-text,
+.card-dark .form-control {
+    background-color: rgba(255, 246, 232, 0.08);
+    border-color: rgba(255, 238, 215, 0.18);
+    color: #fffdf9;
+}
+
+.card-dark .form-control::placeholder {
+    color: rgba(255, 255, 255, 0.45);
+}
+
+/*Right card lighter colours*/
+.card-light {
+    background-color: #ffffff;
+    border: 1px solid #cbe4f9;
+    box-shadow: 0 12px 30px rgba(58, 35, 18, 0.06);
+}
+
+.badge-light-pill {
+    background-color: #f4ebdd;
+    border: 1px solid #e5d5bc;
+    color: #6b533b;
+
+}
+
+.card-light .input-group-text {
+    background-color: #f4ece0;
+    border-color: #dfd2c0;
+}
+
+.card-light .form-control {
+    border-color: #dfd2c0;
+}
+
+.guest-link {
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: #b47e34;
+    text-decoration: none;
+    min-height: 38px;
+}
+
+/* Buttons */
+.btn-gold {
+    background-color: #00aff0;
+    color: #ffffff;
+    padding: 12px 18px;
+    border-radius: 9px;
+}
+
+    .btn-gold:hover {
+        background-color: #0095cc;
+        color: #ffffff;
+    }
+
+.btn-espresso {
+    background-color: #0b2545;
+    color: #ffffff;
+    padding: 12px 18px;
+    border-radius: 9px;
+}
+
+    .btn-espresso:hover {
+        background-color: #13315c;
+        color: #ffffff;
+    }
+
+/*Bottomline*/
+.bio-footer {
+    font-size: 0.65rem;
+    letter-spacing: 0.08em;
+    color: #7c6a58;
+}
