@@ -1,0 +1,186 @@
+.creator-page-wrapper {
+    max-width: 960px;
+    background-color: #FFFFFF ;
+    border: 2px solid #1A1817;
+    border-radius: 14px;
+    padding: 18px 24px;
+}
+
+.creator-pool-box {
+    border-left: 2px solid #D6D1C7;
+}
+
+.tiny-pool-label {
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    color: #57534E;
+}
+
+/* Main Split Card (Form on Left, Preview on Right) */
+.creator-split-box {
+    max-width: 960px;
+    background-color: #FFFFFF;
+    border: 2px solid #1A1817;
+    border-radius: 18px;
+    overflow: hidden;
+}
+
+.creator-form-side {
+    padding: 38px;
+}
+
+.step-circle-badge {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 2px solid #1A1817;zhu
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: #1A1817;
+}
+
+.creator-form-side .form-control,
+.creator-form-side .form-select,
+.creator-form-side .input-group-text {
+    border-color: #D6D1C7;
+    min-height: 44px;
+}
+
+.creator-form-side .input-group-text {
+    background-color: #F7F5F0;
+    font-weight: 700;
+    color: #1A1817;
+}
+
+.previous-rate-note {
+    font-size: 0.74rem;
+    color: #C88A32;
+    font-weight: 700;
+}
+
+/* Save & Cancel Buttons */
+.save-talent-btn {
+    background-color: #C88A32;
+    color: #1A1817;
+    min-height: 46px;
+    padding: 12px 22px;
+    border-radius: 9px;
+    transition: background-color 0.15s ease;
+}
+
+.save-talent-btn:hover {
+    background-color: #B37824;
+    color: #1A1817;
+}
+
+.cancel-barn-btn {
+    background-color: #FFFFFF;
+    border: 1px solid #D6D1C7;
+    color: #1A1817;
+    font-weight: 600;
+    min-height: 46px;
+    padding: 12px 20px;
+    border-radius: 9px;
+    display: inline-flex;
+    align-items: center;
+    transition: background-color 0.15s ease;
+}
+
+.cancel-barn-btn:hover {
+    background-color: #F7F5F0;
+}
+
+/* Right Side Preview Area */
+.creator-preview-side {
+    background-color: #F7F5F0;
+    border-left: 2px solid #1A1817;
+    padding: 34px;
+}
+
+.preview-header-title {
+    font-family: 'Fraunces', Georgia, serif;
+    font-size: 1.2rem;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    color: #1A1817;
+}
+
+.live-green-pill {
+    background-color: #1A1817;
+    color: #F3C16F;
+    font-size: 0.65rem;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 99px;
+}
+
+/* White Card inside Preview */
+.preview-cow-card {
+    background-color: #FFFFFF;
+    border: 2px solid #1A1817;
+    border-radius: 14px;
+    overflow: hidden;
+}
+
+.preview-pic-box {
+    position: relative;
+    height: 230px;
+    padding: 10px 10px 0 10px;
+}
+
+.preview-cow-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.floating-price-sticker {
+    position: absolute;
+    bottom: 12px;
+    right: 22px;
+    background-color: #C88A32;
+    color: #1A1817;
+    font-family: 'Fraunces', Georgia, serif;
+    font-size: 1.15rem;
+    line-height: 1.15;
+    padding: 4px 14px;
+    border-radius: 8px;
+}
+
+.available-green-text {
+    font-size: 0.65rem;
+    font-weight: 700;
+    color: #C88A32;
+}
+
+.preview-cow-name {
+    font-family: 'Fraunces', Georgia, serif;
+    font-size: 1.45rem;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    color: #1A1817;
+    margin-bottom: 6px;
+}
+
+.preview-cow-bio {
+    font-size: 0.82rem;
+    line-height: 1.65;
+    color: #57534E;
+    margin-bottom: 0;
+}
+
+.dark-arrow-circle {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background-color: #1A1817;
+    color: #FFFFFF;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}

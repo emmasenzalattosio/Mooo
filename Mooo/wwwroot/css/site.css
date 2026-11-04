@@ -1,87 +1,109 @@
-/*Background*/
+/* Background (Cowhide Black #1A1817, Milk White #FFFFFF, Hay Gold #C88A32) */
 body {
-    background-color: #F0F8FF;
-    color: #00aff0;
+    background-color: #F7F5F0;
+    background-image: url('/cow_print.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: #1A1817;
     font-family: 'Plus Jakarta Sans', sans-serif;
+    line-height: 1.65;
 }
 
-/*list data the top*/
-.top-header {
-    border-bottom: 1px solid #CBE4F9;
+/* List data at the top */
+.barn-top-bar {
+    background-color: #FFFFFF;
+    border-bottom: 2px solid #1A1817;
 }
 
-.logo-circle, .arrow-circle {
-    width: 36px;
-    height: 36px;
+.milk-circle, .arrow-booty-circle {
+    width: 38px;
+    height: 38px;
     border-radius: 50%;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-}
-
-.logo-circle {
-    background-color: #E1F3FE;
-    border: 1px solid #5C768D;
-}
-
-.arrow-circle {
-    border: 1px solid #00AFF0;
-    color: #6b533b;
-}
-
-.brand-title, .back-title, .main-title, .card-heading, .card-number {
     font-family: 'Fraunces', Georgia, serif;
+    font-weight: 700;
+    font-size: 0.85rem;
 }
 
-.brand-title {
-    font-size: 1.2rem;
-    color: #000000;
-    line-height: 1.1;
+.milk-circle {
+    background-color: #1A1817;
+    color: #FFFFFF;
 }
 
-.brand-sub, .back-sub {
-    font-size: 0.6rem;
+.arrow-booty-circle {
+    border: 2px solid #1A1817;
+    color: #1A1817;
+}
+
+.onlyfarms-logo-text, .back-to-grass-text, .big-moo-title, .moo-heading, .cow-number {
+    font-family: 'Fraunces', Georgia, serif;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+}
+
+.onlyfarms-logo-text {
+    font-size: 1.25rem;
+    color: #1A1817;
+}
+
+.tiny-farm-text {
+    font-size: 0.62rem;
     font-weight: 700;
     letter-spacing: 0.12em;
-    color: #00aff0;
+    color: #C88A32;
 }
 
-.back-title {
-    font-size: 0.85rem;
-    color: #00aff0;
-    line-height: 1.1;
+.back-to-grass-text {
+    font-size: 0.88rem;
+    color: #1A1817;
 }
 
+/* Hero text (Readable white box over the black-and-white cow spots) */
+.text-center.mb-4 {
+    background-color: #FFFFFF;
+    border: 2px solid #1A1817;
+    border-radius: 16px;
+    padding: 28px 24px;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
 
-.eyebrow {
-    font-size: 0.7rem;
+.tiny-top-moo {
+    font-size: 0.72rem;
     font-weight: 700;
     letter-spacing: 0.14em;
-    color: #000000;
+    color: #C88A32;
 }
 
-.main-title {
-    font-size: 2.8rem;
+.big-moo-title {
+    font-size: 3.1rem;
+    color: #1A1817;
 }
 
-.subtitle {
-    max-width: 580px;
-    font-size: 0.9rem;
-    color: #000000;
+.moo-subtitle {
+    max-width: 560px;
+    font-size: 0.95rem;
+    color: #57534E;
+    line-height: 1.65;
+    margin-bottom: 0;
 }
 
-/*General login card*/
-.login-wrapper {
+/* General login card */
+.horny-barn-row {
     max-width: 900px;
 }
 
-.login-card {
+.barn-card {
     position: relative;
     border-radius: 16px;
-    padding: 32px;
+    padding: 36px;
 }
 
-.card-number {
+.cow-number {
     position: absolute;
     top: 24px;
     right: 28px;
@@ -89,7 +111,7 @@ body {
     opacity: 0.15;
 }
 
-.badge-pill {
+.udder-pill {
     display: inline-block;
     padding: 4px 12px;
     border-radius: 99px;
@@ -99,105 +121,121 @@ body {
     margin-bottom: 16px;
 }
 
-.card-heading {
-    font-size: 1.7rem;
+.moo-heading {
+    font-size: 1.75rem;
     margin-bottom: 8px;
 }
 
-.card-text-muted {
-    font-size: 0.82rem;
-    opacity: 0.75;
+.cow-blabla {
+    font-size: 0.85rem;
+    line-height: 1.65;
+    opacity: 0.85;
     margin-bottom: 24px;
 }
 
 .form-label {
-    font-size: 0.75rem;
-    font-weight: 700;
-}
-
-/*Left crad darker colours*/
-.card-dark {
-    background: linear-gradient(160deg, #13315c, #0b2545);
-    color: #ffffff;
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
-}
-
-.badge-dark-pill {
-    background-color: rgba(206, 150, 74, 0.18);
-    border: 1px solid rgba(214, 162, 90, 0.35);
-    color: #e3b56e;
-}
-
-.card-dark .input-group-text,
-.card-dark .form-control {
-    background-color: rgba(255, 246, 232, 0.08);
-    border-color: rgba(255, 238, 215, 0.18);
-    color: #fffdf9;
-}
-
-.card-dark .form-control::placeholder {
-    color: rgba(255, 255, 255, 0.45);
-}
-
-/*Right card lighter colours*/
-.card-light {
-    background-color: #ffffff;
-    border: 1px solid #cbe4f9;
-    box-shadow: 0 12px 30px rgba(58, 35, 18, 0.06);
-}
-
-.badge-light-pill {
-    background-color: #f4ebdd;
-    border: 1px solid #e5d5bc;
-    color: #6b533b;
-
-}
-
-.card-light .input-group-text {
-    background-color: #f4ece0;
-    border-color: #dfd2c0;
-}
-
-.card-light .form-control {
-    border-color: #dfd2c0;
-}
-
-.guest-link {
     font-size: 0.78rem;
     font-weight: 700;
-    color: #b47e34;
+}
+
+.form-control, .form-select, .input-group-text {
+    min-height: 44px;
+}
+
+/* Left card (Cowhide Black + Hay Gold accent) */
+.sexy-cow-card {
+    background-color: #1A1817;
+    border: 2px solid #1A1817;
+    color: #FFFFFF;
+}
+
+.golden-udder-pill {
+    background-color: #2E2A27;
+    border: 1px solid #C88A32;
+    color: #F3C16F;
+}
+
+.sexy-cow-card .input-group-text,
+.sexy-cow-card .form-control {
+    background-color: #2A2624;
+    border-color: #443E3B;
+    color: #FFFFFF;
+}
+
+.sexy-cow-card .form-control::placeholder {
+    color: #9C948E;
+}
+
+/* Right card (Milk White + Crisp Black border) */
+.sugar-daddy-card {
+    background-color: #FFFFFF;
+    border: 2px solid #1A1817;
+}
+
+.creamy-udder-pill {
+    background-color: #F7F5F0;
+    border: 1px solid #D6D1C7;
+    color: #1A1817;
+}
+
+.sugar-daddy-card .input-group-text {
+    background-color: #F7F5F0;
+    border-color: #D6D1C7;
+    color: #1A1817;
+    font-weight: 700;
+}
+
+.sugar-daddy-card .form-control {
+    border-color: #D6D1C7;
+}
+
+.broke-guest-link {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: #C88A32;
     text-decoration: none;
-    min-height: 38px;
+    min-height: 44px;
 }
 
-/* Buttons */
-.btn-gold {
-    background-color: #00aff0;
-    color: #ffffff;
+/* Flat Buttons */
+.milk-me-btn {
+    background-color: #C88A32;
+    color: #1A1817;
+    min-height: 46px;
     padding: 12px 18px;
     border-radius: 9px;
+    transition: background-color 0.15s ease;
 }
 
-    .btn-gold:hover {
-        background-color: #0095cc;
-        color: #ffffff;
-    }
+.milk-me-btn:hover {
+    background-color: #B37824;
+    color: #1A1817;
+}
 
-.btn-espresso {
-    background-color: #0b2545;
-    color: #ffffff;
+.sugar-daddy-btn {
+    background-color: #1A1817;
+    color: #FFFFFF;
+    min-height: 46px;
     padding: 12px 18px;
     border-radius: 9px;
+    transition: background-color 0.15s ease;
 }
 
-    .btn-espresso:hover {
-        background-color: #13315c;
-        color: #ffffff;
-    }
+.sugar-daddy-btn:hover {
+    background-color: #332F2C;
+    color: #FFFFFF;
+}
 
-/*Bottomline*/
-.bio-footer {
-    font-size: 0.65rem;
+/* Bottomline */
+.poop-shovel-footer {
+    background-color: #FFFFFF;
+    border: 2px solid #1A1817;
+    border-radius: 99px;
+    display: table;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 6px 20px;
+    font-size: 0.68rem;
     letter-spacing: 0.08em;
-    color: #7c6a58;
+    color: #1A1817;
 }

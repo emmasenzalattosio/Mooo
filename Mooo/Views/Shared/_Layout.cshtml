@@ -7,28 +7,29 @@
     <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@700&family=Plus+Jakarta+Sans:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/animals.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/creator.css" asp-append-version="true" />
 </head>
 <body>
     @* Top navigation line *@
-    <header class="top-header d-flex justify-content-between align-items-center px-4 py-3">
-        <a class="brand-link d-flex align-items-center gap-2 text-decoration-none" asp-controller="Home" asp-action="Index">
-            <span class="logo-circle">&#127969;</span>
+    <header class="barn-top-bar d-flex justify-content-between align-items-center px-4 py-3">
+        <a class="d-flex align-items-center gap-2 text-decoration-none" asp-controller="Home" asp-action="Index">
+            <span class="milk-circle">OF</span>
             <div>
-                <div class="brand-title">OnlyFarms</div>
-                <div class="brand-sub">BY ZSK GMBH</div>
+                <div class="onlyfarms-logo-text">OnlyFarms</div>
+                <div class="tiny-farm-text">BY ZSK GMBH</div>
             </div>
         </a>
 
-        <a class="back-link d-flex align-items-center gap-2 text-decoration-none" asp-controller="Home" asp-action="Index">
+        <a class="d-flex align-items-center gap-2 text-decoration-none" asp-controller="Home" asp-action="Index">
             <div class="text-end">
-                <div class="back-title">Zurück zur Weide</div>
-                <div class="back-sub">STARTSEITE</div>
+                <div class="back-to-grass-text">Zurück zur Weide</div>
+                <div class="tiny-farm-text">STARTSEITE</div>
             </div>
-            <span class="arrow-circle">&rarr;</span>
+            <span class="arrow-booty-circle">→</span>
         </a>
     </header>
 
-    
     <main class="container py-5">
         @RenderBody()
     </main>

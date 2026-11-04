@@ -1,0 +1,259 @@
+/* Top Hero Banner  */
+.pasture-hero-box {
+    background-color: #1A1817;
+    color: #FFFFFF;
+    border: 2px solid #1A1817;
+    border-radius: 20px;
+    overflow: hidden;
+    margin-bottom: 40px;
+}
+
+.hero-moo-text-side {
+    padding: 48px;
+}
+
+.kuhfluencer-mini-tag {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    color: #F3C16F;
+    margin-bottom: 12px;
+}
+
+.big-herd-headline {
+    font-family: 'Fraunces', Georgia, serif;
+    font-size: 2.6rem;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    margin-bottom: 28px;
+}
+
+.budget-milk-btn {
+    background-color: #C88A32;
+    color: #1A1817;
+    font-weight: 700;
+    min-height: 46px;
+    padding: 12px 24px;
+    border-radius: 10px;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    transition: background-color 0.15s ease;
+}
+
+.budget-milk-btn:hover {
+    background-color: #B37824;
+    color: #1A1817;
+}
+
+.herd-slogan-text {
+    font-size: 0.88rem;
+    color: #D6D1C7;
+}
+
+/* Right side of Hero Banner (Cow Photo) */
+.hero-cow-pic-side {
+
+    /*I guess there to welcome the sticker at top*/
+    position: relative;
+    min-height: 320px;
+    height: 100%;
+}
+
+.hero-cow-img {
+    width: 100%;
+    height: 100%;
+    min-height: 320px;
+    object-fit: cover;
+    display: block;
+}
+
+.live-udder-badge {
+    position: absolute;
+    top: 18px;
+    left: 18px;
+    background-color: #FFFFFF;
+    color: #1A1817;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 6px 14px;
+    border-radius: 99px;
+}
+
+.diva-hoof-badge {
+    position: absolute;
+    bottom: 18px;
+    left: 18px;
+    background-color: #FFFFFF;
+    color: #1A1817;
+    font-size: 0.78rem;
+    font-weight: 700;
+    padding: 8px 16px;
+    border-radius: 10px;
+}
+
+/* Section Title Row (Readable white banner over cow spots) */
+.d-flex.justify-content-between.align-items-end.flex-wrap.mb-4 {
+    background-color: #FFFFFF;
+    border: 2px solid #1A1817;
+    border-radius: 14px;
+    padding: 18px 24px;
+}
+
+.herd-section-title {
+    font-family: 'Fraunces', Georgia, serif;
+    font-size: 1.85rem;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    color: #1A1817;
+    margin: 0;
+}
+
+.talent-count-pill {
+    background-color: #F7F5F0;
+    border: 1px solid #D6D1C7;
+    color: #C88A32;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 4px 12px;
+    border-radius: 99px;
+}
+
+.cast-new-beast-btn {
+    background-color: #C88A32;
+    color: #1A1817;
+    font-size: 0.85rem;
+    font-weight: 700;
+    min-height: 44px;
+    padding: 10px 18px;
+    border-radius: 8px;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    transition: background-color 0.15s ease;
+}
+
+.cast-new-beast-btn:hover {
+    background-color: #B37824;
+    color: #1A1817;
+}
+
+/* 4 Animal Cards (Milk White + Crisp Cowhide Black border) */
+.sexy-herd-card {
+    background-color: #FFFFFF;
+    border: 2px solid #1A1817;
+    border-radius: 16px;
+
+    /*when  I have a box with round sides, it tells that everything put inside of the box has to be cut in*/
+    /*a way that it fits the box*/
+    overflow: hidden;
+}
+
+.animal-mugshot-box {
+    position: relative;
+    height: 220px;
+}
+
+.animal-mugshot-img {
+    width: 100%;
+    height: 100%;
+    /*this basically tells that the picture doesn´t have to be squished or disorted in base of the size*/
+    object-fit: cover;
+}
+
+.spicy-tag-pill {
+    /*Just turns an element into some sticker that can be put on top of another objekt*/
+    /*I can pin point it anywhere in his mother box (only if the parent box has the position: relative in)*/
+    position: absolute; 
+    top: 12px;
+    left: 12px;
+    background-color: #1A1817;
+    color: #F3C16F;
+    font-size: 0.7rem;
+    font-weight: 700;
+    padding: 4px 12px;
+    border-radius: 99px;
+}
+
+.herd-card-body {
+    padding: 22px;
+}
+
+.animal-stage-name {
+    font-family: 'Fraunces', Georgia, serif;
+    font-size: 1.25rem;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    color: #1A1817;
+    margin-bottom: 6px;
+}
+
+.animal-dirty-bio {
+    font-size: 0.85rem;
+    line-height: 1.65;
+    color: #57534E;
+    margin-bottom: 14px;
+}
+
+.rate-mini-label {
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    color: #57534E;
+}
+
+.meat-price-tag {
+    font-family: 'Fraunces', Georgia, serif;
+    font-size: 1.65rem;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    color: #1A1817;
+}
+
+/* Edit & Delete Buttons inside Cards */
+.pimp-my-cow-btn {
+    background-color: #F7F5F0;
+    color: #1A1817;
+    border: 1px solid #D6D1C7;
+    font-size: 0.8rem;
+    font-weight: 700;
+    min-height: 44px;
+    padding: 10px;
+    border-radius: 8px;
+    text-decoration: none;
+    text-align: center;
+    transition: background-color 0.15s ease;
+}
+
+.pimp-my-cow-btn:hover {
+    background-color: #C88A32;
+    color: #1A1817;
+}
+
+.slaughterhouse-delete-btn {
+    background-color: #FFFFFF;
+    color: #57534E;
+    border: 1px solid #D6D1C7;
+    font-size: 0.8rem;
+    font-weight: 700;
+    min-height: 44px;
+    padding: 10px;
+    border-radius: 8px;
+    text-decoration: none;
+    text-align: center;
+    transition: background-color 0.15s ease;
+}
+
+.slaughterhouse-delete-btn:hover {
+    background-color: #1A1817;
+    color: #FFFFFF;
+}
+
+/* Result Box inside ZSK-Rechner Cards */
+.hay-result-box {
+    background-color: #F7F5F0;
+    border: 2px solid #C88A32;
+    border-radius: 12px;
+    padding: 14px 16px;
+    color: #1A1817;
+}

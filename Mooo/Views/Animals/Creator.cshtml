@@ -1,0 +1,170 @@
+@model Mooo.Models.Animals
+@{
+    ViewData["Title"] = "Kuhfluencer verwalten";
+
+    string previewImg = "/licking_cow.gif";
+    if (Model.Price == 650) { previewImg = "/sexy_sheep(real).jpg"; }
+    if (Model.Price == 500) { previewImg = "/giphy-2753670406.gif"; }
+    if (Model.Price <= 100) { previewImg = "/freet.jpg"; }
+}
+
+@* Top title row *@
+<div class="d-flex justify-content-between align-items-end flex-wrap mb-3 creator-page-wrapper mx-auto">
+    <div>
+        <p class="tiny-top-moo mb-1">— TALENT-VERWALTUNG & WECHSELKURSE</p>
+        <h1 class="big-moo-title mb-1">Kuhfluencer verwalten</h1>
+        <p class="text-muted small mb-0">Neues Tier hinzufügen / Wechselkurs in der Datenbank anpassen</p>
+    </div>
+
+    <div class="creator-pool-box ps-3 mt-2 mt-md-0">
+        <div class="tiny-pool-label">CREATOR-POOL</div>
+        <div class="fw-bold">Aktive Talente</div>
+    </div>
+</div>
+
+@* Quick links to switch between animals *@
+@if (ViewBag.AllAnimals != null)
+{
+    <div class="creator-page-wrapper mx-auto mb-4 py-2 px-3 d-flex align-items-center gap-2 flex-wrap">
+        <span class="tiny-pool-label me-1">TIER WÄHLEN:</span>
+        <a asp-controller="Animals" asp-action="Creator" asp-route-id="" class="btn btn-sm save-talent-btn py-1 px-3">
+            + Neues Tier
+        </a>
+        @foreach (var t in ViewBag.AllAnimals)
+        {
+            <a asp-controller="Animals" asp-action="Creator" asp-route-id="@t.ID" class="btn btn-sm cancel-barn-btn py-1 px-3">
+                @t.Name (@t.Price €)
+            </a>
+        }
+    </div>
+}
+
+@* Main two-column box (Left: Form, Right: Preview Card) *@
+<div class="row g-0 creator-split-box mx-auto">
+
+    @* Left Side: Form to edit or add animal *@
+    <div class="col-md-7 creator-form-side">
+        <div class="d-flex align-items-center gap-2 mb-2">
+            <span class="step-circle-badge">01</span>
+            <span class="tiny-pool-label">STAMMDATEN</span>
+        </div>
+
+        <h2 class="moo-heading">Talent-Profil & Wechselkurs speichern</h2>
+        <p class="text-muted small mb-4">Alle Angaben werden direkt in der Datenbank gespeichert.</p>
+
+        <form asp-controller="Animals" asp-action="SaveAnimal" method="post">
+            <input type="hidden" asp-for="ID" />
+
+            <div class="mb-3">
+                <label class="form-label">Name des Tiers</label>
+                <input type="text" asp-for="Name" class="form-control" required />
+            </div>
+
+            <div class="row g-3 mb-3">
+                <div class="col-md-6">
+                    <label class="form-label">Tierart</label>
+                    <select asp-for="Category" class="form-select">
+                        <option value="Kuh">Kuh</option>
+                        <option value="Schaf">Schaf</option>
+                        <option value="Ziege">Ziege</option>
+                        <option value="Kleine Ziege">Kleine Ziege</option>
+                        <option value="Dreckige Sau">Dreckige Sau (Special)</option>
+                    </select>
+                </div>
+
+                <div class="col-md-6">
+                    <label class="form-label">Aktueller Wechselkurs in Euro</label>
+                    <div class="input-group">
+                        <span class="input-group-text">€</span>
+                        <input type="number" asp-for="Price" class="form-control" min="1" required />
+                    </div>
+                    <small class="previous-rate-note">• Standard: Kuh 2800 €, Schaf 650 €, Ziege 500 €</small>
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Badge / Titel auf der Karte</label>
+                <input type="text" asp-for="Experience" class="form-control" placeholder="z. B. Top 1% auf der Weide" />
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">OnlyFarms Bio / Beschreibung</label>
+                <textarea asp-for="Description" class="form-control" rows="3"></textarea>
+            </div>
+
+            <div class="mb-4">
+                <label class="form-label">Profilbild Dateiname (aus wwwroot)</label>
+                <div class="input-group">
+                    <span class="input-group-text">IMG</span>
+                    <input type="text" asp-for="Provenience" class="form-control" />
+                </div>
+                <small class="text-muted">
+                    Bilder: cow_lick(real).jpg, sexy_sheep(real).jpg, giphy-2753670406.gif, freet.jpg
+                </small>
+            </div>
+
+            <hr class="my-4" />
+
+            <div class="d-flex gap-3">
+                <button type="submit" class="btn save-talent-btn d-flex justify-content-between align-items-center border-0">
+                    <span><strong>Speichern</strong> <small class="ms-1 opacity-75">Save to DB</small></span>
+                    <span class="ms-4">→</span>
+                </button>
+
+                <a asp-controller="Animals" asp-action="Index" class="btn cancel-barn-btn">
+                    Abbrechen
+                </a>
+            </div>
+        </form>
+    </div>
+
+    @* Right Side: Live Preview Card *@
+    <div class="col-md-5 creator-preview-side">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+            <div>
+                <div class="tiny-pool-label">LIVE-VORSCHAU</div>
+                <div class="preview-header-title">OnlyFarms Creator Card</div>
+            </div>
+            <span class="live-green-pill">• LIVE</span>
+        </div>
+
+        @* White preview card inside the right side *@
+        <div class="preview-cow-card mx-auto">
+            <div class="preview-pic-box">
+                <img src="@previewImg"
+                     alt="Vorschau"
+                     class="preview-cow-img" />
+                <span class="floating-price-sticker">@Model.Price €</span>
+            </div>
+
+            <div class="p-3">
+                <div class="d-flex justify-content-between align-items-center mb-1">
+                    <span class="tiny-pool-label">KUHFLUENCER</span>
+                    <span class="available-green-text">● VERFÜGBAR</span>
+                </div>
+
+                <h3 class="preview-cow-name">@Model.Name</h3>
+                <p class="preview-cow-bio">@Model.Description</p>
+
+                <hr />
+
+                <div class="d-flex justify-content-between align-items-center">
+                    <div class="d-flex align-items-center gap-2">
+                        <span class="milk-circle">OF</span>
+                        <div>
+                            <div class="fw-bold small">OnlyFarms</div>
+                            <div class="tiny-pool-label">VERIFIED CREATOR</div>
+                        </div>
+                    </div>
+                    <span class="dark-arrow-circle">→</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+@* Bottom line *@
+<div class="creator-page-wrapper mx-auto mt-3 poop-shovel-footer">
+    ONLYFARMS BY ZSK GMBH — INTERNE TALENT-VERWALTUNG
+</div>

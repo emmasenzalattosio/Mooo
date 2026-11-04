@@ -1,5 +1,255 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
+@model List<Mooo.Models.Animals>
 @{
+    ViewData["Title"] = "Kuhfluencer & Wechselkurse";
 }
+
+@* Big top banner with cow picture *@
+<div class="pasture-hero-box">
+    <div class="row g-0 align-items-center">
+
+        @* Left side: Text and button *@
+        <div class="col-md-7 hero-moo-text-side">
+            <p class="kuhfluencer-mini-tag">
+                — KUHFLUENCER MANAGEMENT
+                @if (ViewBag.Username != null)
+                {
+                    <span>• WILLKOMMEN, @ViewBag.Username!</span>
+                }
+            </p>
+            <h1 class="big-herd-headline">
+                Wir messen Erfolg nicht in Likes, sondern in Ziegen, Schafen und Kühen!
+            </h1>
+
+            <div class="d-flex align-items-center gap-3 flex-wrap">
+                <a href="#zsk-rechner" class="budget-milk-btn">Jetzt Budget berechnen →</a>
+                <span class="herd-slogan-text">Dein Budget, unsere Herde.</span>
+            </div>
+        </div>
+
+        @* Right side: Cow photo with funny badges *@
+        <div class="col-md-5 hero-cow-pic-side">
+            <img src="/goofy_farm_trio_yoga_selfie_1793700887708.jpg"
+                 alt="Kuh auf der Weide"
+                 class="hero-cow-img" />
+            <span class="live-udder-badge">● Live von der Weide</span>
+            <span class="diva-hoof-badge">Echte Stars haben keine Allüren, nur Hufe.</span>
+        </div>
+
+    </div>
+</div>
+
+@* Title above the animal cards *@
+<div class="d-flex justify-content-between align-items-end flex-wrap mb-4">
+    <div>
+        <div class="d-flex align-items-center gap-2 mb-1">
+            <h2 class="herd-section-title">Unsere Top-Kuhfluencer & Wechselkurse</h2>
+        </div>
+        <p class="text-muted small mb-0">
+            Verwalte die tierischen Stars und Wechselkurse deiner nächsten Kampagne.
+        </p>
+    </div>
+
+</div>
+
+@* Animal Cards loaded from the database *@
+<div class="row g-4 mb-5">
+    @foreach (var tier in Model)
+    {
+        @* Pick the matching picture for each animal *@
+        string imgPath = "/licking_cow.gif";
+        if (tier.Price == 650) { imgPath = "sheep_licking.gif"; }
+        if (tier.Price == 500) { imgPath = "/giphy-2753670406.gif"; }
+        if (tier.Price <= 100) { imgPath = "/freet.jpg"; }
+
+        <div class="col-md-3">
+            <div class="sexy-herd-card h-100">
+                <div class="animal-mugshot-box">
+                    <img src="@imgPath"
+                         alt="@tier.Name"
+                         class="animal-mugshot-img" />
+                    <span class="spicy-tag-pill">@tier.Experience</span>
+                </div>
+
+                <div class="herd-card-body">
+                    <h3 class="animal-stage-name">@tier.Name</h3>
+                    <p class="animal-dirty-bio">@tier.Description</p>
+                    <hr />
+
+                    <div class="rate-mini-label">AKTUELLER WECHSELKURS</div>
+                    <div class="d-flex justify-content-between align-items-baseline mb-3">
+                        <span class="meat-price-tag">@tier.Price €</span>
+                        <small class="text-muted">pro Tier</small>
+                    </div>
+
+                    Edit and Delete buttons 
+                     <div class="row g-2">
+                        <div class="col-7">
+                            <a asp-controller="Animals"
+                               asp-action="Creator"
+                               asp-route-id="@tier.ID"
+                               class="pimp-my-cow-btn d-block">
+                                Kurs anpassen
+                            </a>
+                        </div>
+                        <div class="col-5">
+                            <a asp-controller="Animals"
+                               asp-action="Delete"
+                               asp-route-id="@tier.ID"
+                               class="slaughterhouse-delete-btn d-block">
+                                Löschen
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+</div>
+
+@* ZSK-Rechner Section *@
+<div id="zsk-rechner" class="d-flex justify-content-between align-items-end flex-wrap mb-4">
+    <div>
+        <div class="d-flex align-items-center gap-2 mb-1">
+            <h2 class="herd-section-title">Der offizielle OnlyFarms ZSK-Rechner</h2>
+            <span class="talent-count-pill">Live-Kurse</span>
+        </div>
+        <p class="text-muted small mb-0">
+            Rechne Euro in Tiere, Tiere in Euro oder tausche deine Herde direkt untereinander.
+        </p>
+    </div>
+</div>
+
+<div class="row g-4">
+
+    @* 1. Euro in Tiere umrechnen *@
+    <div class="col-md-4">
+        <div class="sexy-herd-card h-100 herd-card-body">
+            <span class="talent-count-pill d-inline-block mb-2">01 • BUDGET → HERDE</span>
+            <h3 class="animal-stage-name">Euro in Tiere umrechnen</h3>
+            <p class="animal-dirty-bio">
+                Gib dein Budget in Euro ein und sieh sofort, welche Tiere du dafür bekommst.
+            </p>
+
+            <form asp-controller="Animals" asp-action="EuroToAnimals" method="post">
+                <div class="mb-3">
+                    <label class="form-label fw-bold small">Dein Budget in Euro (€)</label>
+                    <div class="input-group">
+                        <span class="input-group-text fw-bold">€</span>
+                        <input type="number" name="euroBudget" class="form-control" value="6550" min="1" required />
+                    </div>
+                </div>
+
+                <button type="submit" class="budget-milk-btn w-100 justify-content-center border-0">
+                    Herde berechnen →
+                </button>
+            </form>
+
+            @if (ViewBag.EuroToAnimalsList != null)
+            {
+                <div class="hay-result-box mt-3">
+                    <div class="rate-mini-label mb-1">DEINE HERDE FÜR @ViewBag.EuroBudget €:</div>
+                    <ul class="mb-2 ps-3 fw-bold">
+                        @foreach (var zeile in ViewBag.EuroToAnimalsList)
+                        {
+                            <li>@zeile</li>
+                        }
+                    </ul>
+                    <div class="small text-muted">Restbetrag: <strong>@ViewBag.RestEuro €</strong></div>
+                </div>
+            }
+        </div>
+    </div>
+
+    @* 2. Tiere in Euro umrechnen *@
+    <div class="col-md-4">
+        <div class="sexy-herd-card h-100 herd-card-body">
+            <span class="talent-count-pill d-inline-block mb-2">02 • HERDE → EURO</span>
+            <h3 class="animal-stage-name">Tiere in Euro umrechnen</h3>
+            <p class="animal-dirty-bio">
+                Wähle ein Tier und die Anzahl aus, um den Gesamtwert in Euro zu berechnen.
+            </p>
+
+            <form asp-controller="Animals" asp-action="AnimalsToEuro" method="post">
+                <div class="mb-2">
+                    <label class="form-label fw-bold small">Welches Tier?</label>
+                    <select name="animalId" class="form-select">
+                        @foreach (var tier in Model)
+                        {
+                            <option value="@tier.ID">@tier.Name (@tier.Price €)</option>
+                        }
+                    </select>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label fw-bold small">Anzahl</label>
+                    <input type="number" name="anzahl" class="form-control" value="2" min="1" required />
+                </div>
+
+                <button type="submit" class="budget-milk-btn w-100 justify-content-center border-0">
+                    In Euro umrechnen →
+                </button>
+            </form>
+
+            @if (ViewBag.TotalEuroResult != null)
+            {
+                <div class="hay-result-box mt-3">
+                    <div class="rate-mini-label">GESAMTWERT (@ViewBag.SelectedAnimalText):</div>
+                    <div class="meat-price-tag my-1">@ViewBag.TotalEuroResult €</div>
+                </div>
+            }
+        </div>
+    </div>
+
+    @* 3. Tier gegen Tier tauschen *@
+    <div class="col-md-4">
+        <div class="sexy-herd-card h-100 herd-card-body">
+            <span class="talent-count-pill d-inline-block mb-2">03 • TAUSCH-BÖRSE</span>
+            <h3 class="animal-stage-name">Tiere direkt tauschen</h3>
+            <p class="animal-dirty-bio">
+                Wie viele Schafe, Ziegen oder kleine Ziegen bekommst du z. B. für 3 Kühe?
+            </p>
+
+            <form asp-controller="Animals" asp-action="TradeAnimals" method="post">
+                <div class="row g-2 mb-2">
+                    <div class="col-4">
+                        <label class="form-label fw-bold small">Anzahl</label>
+                        <input type="number" name="fromCount" class="form-control" value="3" min="1" required />
+                    </div>
+                    <div class="col-8">
+                        <label class="form-label fw-bold small">Mein Tier</label>
+                        <select name="fromAnimalId" class="form-select">
+                            @foreach (var tier in Model)
+                            {
+                                <option value="@tier.ID">@tier.Name (@tier.Price €)</option>
+                            }
+                        </select>
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label fw-bold small">Tauschen gegen</label>
+                    <select name="toAnimalId" class="form-select">
+                        @foreach (var tier in Model)
+                        {
+                            <option value="@tier.ID">@tier.Name (@tier.Price €)</option>
+                        }
+                    </select>
+                </div>
+
+                <button type="submit" class="budget-milk-btn w-100 justify-content-center border-0">
+                    Tausch-Deal prüfen →
+                </button>
+            </form>
+
+            @if (ViewBag.TradeMainResult != null)
+            {
+                <div class="hay-result-box mt-3">
+                    <div class="small text-muted">@ViewBag.TradeSummary</div>
+                    <div class="meat-price-tag my-1">@ViewBag.TradeMainResult</div>
+                    <div class="small text-muted">Restwert: <strong>@ViewBag.TradeRestEuro €</strong></div>
+                </div>
+            }
+        </div>
+    </div>
+
+</div>
