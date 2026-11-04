@@ -2,10 +2,15 @@
 @{
     ViewData["Title"] = "Kuhfluencer verwalten";
 
-    string previewImg = "/licking_cow.gif";
-    if (Model.Price == 650) { previewImg = "/sexy_sheep(real).jpg"; }
-    if (Model.Price == 500) { previewImg = "/giphy-2753670406.gif"; }
-    if (Model.Price <= 100) { previewImg = "/freet.jpg"; }
+    string previewImg = Model.Provenience;
+    if (string.IsNullOrEmpty(previewImg))
+    {
+        previewImg = "licking_cow.gif";
+    }
+    if (!previewImg.StartsWith("/"))
+    {
+        previewImg = "/" + previewImg;
+    }
 }
 
 @* Top title row *@

@@ -38,6 +38,8 @@
     </div>
 </div>
 
+ 
+
 @* Title above the animal cards *@
 <div class="d-flex justify-content-between align-items-end flex-wrap mb-4">
     <div>
@@ -55,11 +57,16 @@
 <div class="row g-4 mb-5">
     @foreach (var tier in Model)
     {
-        @* Pick the matching picture for each animal *@
-        string imgPath = "/licking_cow.gif";
-        if (tier.Price == 650) { imgPath = "sheep_licking.gif"; }
-        if (tier.Price == 500) { imgPath = "/giphy-2753670406.gif"; }
-        if (tier.Price <= 100) { imgPath = "/freet.jpg"; }
+        @* Use the image/gif from the database Provenience column *@
+        string imgPath = tier.Provenience;
+        if (string.IsNullOrEmpty(imgPath))
+        {
+            imgPath = "licking_cow.gif";
+        }
+        if (!imgPath.StartsWith("/"))
+        {
+            imgPath = "/" + imgPath;
+        }
 
         <div class="col-md-3">
             <div class="sexy-herd-card h-100">
@@ -81,25 +88,7 @@
                         <small class="text-muted">pro Tier</small>
                     </div>
 
-                    Edit and Delete buttons 
-                     <div class="row g-2">
-                        <div class="col-7">
-                            <a asp-controller="Animals"
-                               asp-action="Creator"
-                               asp-route-id="@tier.ID"
-                               class="pimp-my-cow-btn d-block">
-                                Kurs anpassen
-                            </a>
-                        </div>
-                        <div class="col-5">
-                            <a asp-controller="Animals"
-                               asp-action="Delete"
-                               asp-route-id="@tier.ID"
-                               class="slaughterhouse-delete-btn d-block">
-                                Löschen
-                            </a>
-                        </div>
-                    </div>
+        
                 </div>
             </div>
         </div>
