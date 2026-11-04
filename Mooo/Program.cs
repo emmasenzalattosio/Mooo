@@ -12,11 +12,15 @@ namespace Mooo
             builder.Services.AddControllersWithViews();
 
             builder.Services.AddDbContext<OnlyFarmsDbContext>
-                (opts => opts.UseSqlServer(builder.Configuration.GetConnectionString("OnlyFarms")));
+                (opts => opts.UseSqlite(builder.Configuration.GetConnectionString("OnlyFarms")));
 
             var app = builder.Build();
 
-    
+            using (var scope = app.Services.CreateScope())
+            {
+                var db = scope.ServiceProvider.GetRequiredService<OnlyFarmsDbContext>();
+                db.Database.EnsureCreated();
+            }
 
             app.MapControllerRoute(
                 name: "default",
